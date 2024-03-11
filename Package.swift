@@ -17,19 +17,15 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(url: "https://github.com/apple/swift-syntax", "509.0.0"..<"511.0.0"),
-    .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.0"),
+    .package(url: "https://github.com/ContentsToolDev/swift-syntax-xcframeworks", branch: "main"),
+    .package(url: "https://github.com/ContentsToolDev/swift-snapshot-testing", branch: "main"),
   ],
   targets: [
     .target(
       name: "MacroTesting",
       dependencies: [
         .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
-        .product(name: "SwiftDiagnostics", package: "swift-syntax"),
-        .product(name: "SwiftOperators", package: "swift-syntax"),
-        .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
-        .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-        .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+        .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
       ]
     ),
     .testTarget(
